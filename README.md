@@ -9,8 +9,8 @@ RequireJS site for more background on the sample project. The RequireJS site
 also has a link to
 [download this sample project](http://requirejs.org/docs/download.html#samplejquery).
 
-The sample project uses a require-jquery.js file which is just a simple
-combination of RequireJS and jQuery.
+The sample project uses a configuration to specify to require.js where to find the jQuery file.
+This is needed since jQuery defines itself as a module named "jquery". 
 
 This project will be kept relatively up to date with the latest jQuery and
 RequireJS files as they are released.
@@ -19,11 +19,9 @@ RequireJS files as they are released.
 
 With RequireJS, scripts can load in a different order than the order they are specified.
 This can cause problems for jQuery plugins that assume jQuery is already loaded.
-Using the combined RequireJS + jQuery file makes sure jQuery is in the page before
-any jQuery plugins load.
-
-However, the ideal use of jQuery with RequireJS is to load it as a module, since
-it registers as an AMD module.
+This example shows how to use the shim cofiguration to specify dependencies of libraries
+that are not using AMD, in this case to make sure jQuery is in the page before
+the jQuery plugins load.
 
 Here are some alternate ways to use RequireJS and jQuery together in a way that
 recognizes jQuery plugin constraints.

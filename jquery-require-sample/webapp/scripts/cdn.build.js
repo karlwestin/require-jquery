@@ -1,19 +1,18 @@
 ({
     appDir: "../",
-    baseUrl: "scripts/",
+    baseUrl: "scripts",
     dir: "../../webapp-build",
-    //Comment out the optimize line if you want
-    //the code minified by UglifyJS
+    // comment out to minify the built JS
     optimize: "none",
 
-    // point to the shim config we set up before
-    mainConfigFile: "main.js",
-
+    // point to path config in main.amd
+    mainConfigFile: "main.amd.js",
     modules: [
         //Optimize the application files. jQuery is not 
         //included since it is already in require-jquery.js
         {
-            name: "main"
+            exclude: ["jquery"],
+            name: "main.amd"
         }
     ]
 })
